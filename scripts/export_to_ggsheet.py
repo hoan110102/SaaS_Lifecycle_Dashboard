@@ -40,7 +40,7 @@ class GoogleSheetsExporter:
         sheet = self.client.open_by_key(self.sheet_id)
         try:
             worksheet = sheet.worksheet(sheet_name)
-            # Resize để đảm bảo đủ chỗ cho dữ liệu mới (fix lỗi "exceeds grid limits")
+            # Resize để đảm bảo đủ chỗ cho dữ liệu mới
             worksheet.resize(rows=rows, cols=cols)
             print(f"[INFO] Đã mở & resize Worksheet: {sheet_name} ({rows} rows × {cols} cols)")
         except gspread.WorksheetNotFound:
@@ -82,7 +82,7 @@ class GoogleSheetsExporter:
  
             num_rows = len(df)
             num_cols = len(df.columns)
-            # Chuyển số cột sang ký tự cột (A–Z, tối đa 26 cột)
+            # Chuyển số cột sang ký tự cột
             col_letter = chr(64 + num_cols) if num_cols <= 26 else "Z"
  
             print(f"[INFO] Fetched {num_rows:,} dòng × {num_cols} cột từ {table_name}")
@@ -100,7 +100,7 @@ class GoogleSheetsExporter:
             )
             worksheet.clear()
  
-            # - Upload header (1 lần duy nhất, format bold)
+            # - Upload header
             header_range = f"A1:{col_letter}1"
             worksheet.update(
                 range_name=header_range,
@@ -133,7 +133,7 @@ class GoogleSheetsExporter:
                         err_str = str(e)
                         if any(code in err_str for code in ["429", "500", "quota"]):
                             wait = 5 * (attempt + 1)
-                            print(f"[WARN] Rate limit / Server error → chờ {wait}s rồi retry (lần {attempt+1}/3)...")
+                            print(f"[WARN] Rate limit / Server error → chờ {wait}s, retry (lần {attempt+1}/3)...")
                             time.sleep(wait)
                             if attempt == 2:
                                 raise
