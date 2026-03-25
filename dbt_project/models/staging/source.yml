@@ -1,0 +1,18 @@
+# models/staging/sources.yml
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Raw data tables loaded from DuckDB"
+    schema: raw
+    tables:
+      - name: users
+        description: "Users information"
+      - name: subscriptions
+        description: "Subscription data (SCD Type 2)"
+      - name: transactions
+        description: "Payment transactions"
+      - name: support_tickets
+        description: "Support tickets"
+      - name: product_usage
+        description: "Product usage events"

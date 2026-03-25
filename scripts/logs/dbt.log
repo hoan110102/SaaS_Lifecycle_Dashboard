@@ -1,0 +1,13 @@
+[0m21:07:13.433474 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 21:07:13.504473 | 5c712204-75a6-4384-badb-5b3d602d50e6 ==============================
+[0m21:07:13.504473 [info ] [MainThread]: Running with dbt=1.11.2
+[0m21:07:13.506477 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\ADMIN\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --select marts.analytics.*', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m21:07:13.508482 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\ADMIN\Desktop\Hoan\Portfolio\customer_360_lifecycle_dashboard\scripts\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:07:13.510477 [debug] [MainThread]: Command `dbt run` failed at 21:07:13.510477 after 0.15 seconds
+[0m21:07:13.511478 [debug] [MainThread]: Flushing usage events
