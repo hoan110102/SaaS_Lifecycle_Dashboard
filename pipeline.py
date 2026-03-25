@@ -2,16 +2,6 @@ import subprocess
 import os
 import sys
 
-def run_generate_script(scripts_python_dir):
-    print("[INFO] Running generate script...")
-    try:
-        os.chdir(scripts_python_dir)
-        subprocess.check_call([sys.executable, 'generate_data.py'])
-        print("[SUCCESS] Generate completed.")
-    except subprocess.CalledProcessError as e:
-        print(f"[ERROR] Generate failed: {e}")
-        sys.exit(1)
-
 def run_load_script(scripts_python_dir):
     print("[INFO] Running load script...")
     try:
@@ -56,7 +46,6 @@ def run_export_script(scripts_python_dir):
 def main():
     dbt_dir = os.path.join(os.path.dirname(__file__), "dbt_project")
     scripts_python_dir= os.path.join(os.path.dirname(__file__), "scripts")
-    run_generate_script(scripts_python_dir)
     run_load_script(scripts_python_dir)
     run_dbt_models(dbt_dir)
     run_export_script(scripts_python_dir)
