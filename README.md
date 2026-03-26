@@ -3,6 +3,10 @@
 > **End-to-end analytics pipeline** theo dõi toàn bộ vòng đời khách hàng - từ lần đầu đăng ký đến churn - thông qua một hệ thống dữ liệu hoàn chỉnh: **Python → DuckDB → dbt → Tableau**.
 
 > **Lưu ý:** Dữ liệu sử dụng trong dự án được tạo ra từ Python code, không có ý nghĩa thực tế, chỉ có ý nghĩa trong dự án này. Không sử dụng dữ liệu này vào thực tế!!!
+
+> Link Dashboard (Tableau): [Link](https://public.tableau.com/views/customer360_lifecycle_dashboard/DBacquisition?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+> Link Google Sheet (Example Data Mart): [Link](https://docs.google.com/spreadsheets/d/1fNeRTOdwCIEze2yRLe8V63XhmpfZRKUcNPHrOAoayaY/edit?usp=sharing)
 ---
 
 ## 📌 Mục Lục
